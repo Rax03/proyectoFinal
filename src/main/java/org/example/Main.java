@@ -1,31 +1,46 @@
 package org.example;
+import org.example.Model.DAO.PokedexDAO;
 import org.example.Model.Entidades.Pokedex;
 import org.example.Model.Entidades.Pokemon;
-import org.example.Model.Enums.Tipo;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.List;
+import java.util.Objects;
+
+import static org.example.Model.DAO.PokedexDAO.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-    }
+                /*Pokedex pokedex = new Pokedex(25, "Cuando se enfada, este Pokémon descarga" +
+                        " la energía que almacena en el interior de las bolsas de las mejillas."
+                        , "bosque", "100 Ataque", "Rayo", new ArrayList<Pokemon>());
+                PokedexDAO.insertar(pokedex);*/
 
-    Connection connection;
-    {
-        try {
-            connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/pokedex_pokemon", "root", "root");
-            Pokedex pokeded = new Pokedex(25,"Cuando se enfada, este Pokémon descarga" +
-                    " la energía que almacena en el interior de las bolsas de las mejillas."
-                    ,"bosque","100 Ataque","Rayo", new ArrayList<Pokemon>());
+         /*Pokedex pokedex = new Pokedex(1, "Lleva un bulbo en el lomo desde que nace."+
+         "A medida que el Pokémon crece, el bulbo también va haciéndose más grande."
+                        , "Desconocida", "20 Ataque", "Hoja afilada", new ArrayList<Pokemon>());
+                PokedexDAO.insertar(pokedex);
+               Pokedex buscado = PokedexDAO.select_numero(25);
+        System.out.println(buscado);*/
 
-            Pokemon p = new Pokemon("Pikachu", "Masculino", Tipo.Electrico, Tipo.Electrico, 6.0f, 0.4f, pokeded);
-        } catch (SQLException ex) {
-            throw new RuntimeException(ex);
-        }
+        //List<Pokedex> buscados = PokedexDAO.select_pokedex();
+        //System.out.println(buscados);
+                //Pokemon p = new Pokemon("Pikachu", "Masculino", Tipo.Electrico, Tipo.Electrico, 6.0f, 0.4f, pokeded);
+ //PokedexDAO.delete_pokedex(1);
+       /* Pokedex pokedex = new Pokedex(25 ,"Cuando se enfada, este Pokémon descarga" +
+                " la energía que almacena en el interior de las bolsas de las mejillas."
+                , "bosque", "100 Ataque", "Rayo", new ArrayList<Pokemon>());*/
+
+
+        Pokedex pokedex = new Pokedex(25 ,"Cuando se enfada, este Pokémon descarga" +
+                " la energía que almacena en el interior de las bolsas de las mejillas."
+                , "bosque", "100 Ataque", "Rayo", new ArrayList<Pokemon>());
+            update_pokedex (pokedex);
+
+
+
+        //Pokemon p = new Pokemon("Pikachu", "Masculino", Tipo.Electrico, Tipo.Electrico, 6.0f, 0.4f, pokeded);
+
     }
 }

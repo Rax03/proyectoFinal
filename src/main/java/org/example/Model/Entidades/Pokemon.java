@@ -6,6 +6,7 @@ import org.example.Model.Enums.Tipo;
 import java.util.Objects;
 
 public class Pokemon{
+    private int id;
     private String nombre;
     private String sexo;
     private Tipo tipo1;
@@ -14,7 +15,8 @@ public class Pokemon{
     private Float Altura;
     private Pokedex pokeded;
 
-    public Pokemon(String nombre, String sexo, Tipo tipo1, Tipo tipo2, Float peso, Float altura, Pokedex pokeded) {
+    public Pokemon(int id, String nombre, String sexo, Tipo tipo1, Tipo tipo2, Float peso, Float altura, Pokedex pokeded) {
+        this.id = id;
         this.nombre = nombre;
         this.sexo = sexo;
         this.tipo1 = tipo1;
@@ -24,7 +26,12 @@ public class Pokemon{
         this.pokeded = pokeded;
     }
 
-    public Pokemon() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -84,28 +91,32 @@ public class Pokemon{
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        Pokemon pokemon = (Pokemon) object;
-        return Objects.equals(nombre, pokemon.nombre);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nombre);
-    }
-
-    @Override
     public String toString() {
         return "Pokemon{" +
-                "nombre='" + nombre + '\'' +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
                 ", sexo='" + sexo + '\'' +
                 ", tipo1=" + tipo1 +
                 ", tipo2=" + tipo2 +
                 ", Peso=" + Peso +
                 ", Altura=" + Altura +
-                ", pokeded=" + pokeded.getId() +
+                ", pokeded=" + pokeded +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Pokemon pokemon = (Pokemon) object;
+        return id == pokemon.id && Objects.equals(nombre, pokemon.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nombre);
+    }
+
+    public Pokemon() {
     }
 }

@@ -4,19 +4,19 @@ import java.util.List;
 import java.util.Objects;
 
 public class Pokedex {
-    private int Id;
+    private int Numero;
     private String Descripcion;
     private String Habitad;
     private String Estadisticas;
     private String Movimientos;
     private List<Pokemon> pokemons;
 
-    public int getId() {
-        return Id;
+    public int getNumero() {
+        return Numero;
     }
 
-    public void setId(int id) {
-        Id = id;
+    public void setNumero(int numero) {
+        Numero = numero;
     }
 
     public String getDescripcion() {
@@ -74,18 +74,18 @@ public class Pokedex {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         Pokedex pokeded = (Pokedex) object;
-        return Id == pokeded.Id;
+        return Numero == pokeded.Numero;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Id);
+        return Objects.hash(Numero);
     }
 
     @Override
     public String toString() {
         return "Pokeded{" +
-                "Id=" + Id +
+                "Id=" + Numero +
                 ", Descripcion='" + Descripcion + '\'' +
                 ", Habitad='" + Habitad + '\'' +
                 ", Estadisticas='" + Estadisticas + '\'' +
@@ -95,7 +95,7 @@ public class Pokedex {
     }
 
     public Pokedex(int id, String descripcion, String habitad, String estadisticas, String movimientos, List<Pokemon> pokemons) {
-        Id = id;
+        Numero = id;
         Descripcion = descripcion;
         Habitad = habitad;
         Estadisticas = estadisticas;
@@ -104,4 +104,5 @@ public class Pokedex {
 
 
     }
+    public Pokedex(){}
 }
