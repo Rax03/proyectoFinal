@@ -1,0 +1,36 @@
+
+g	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‚î’Äó1
+g	java:S112."FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ƒî’Äó1
+g	java:S112A"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ƒî’Äó1
+‹
+java:S1192"nDefine a constant instead of duplicating this literal "jdbc:mariadb://localhost:3306/pokedex_pokemon" 3 times.(“Õë¢8…î’Äó1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éß¹Ğ8ˆî’Äó1
+W
+java:S1118
+":Add a private constructor to hide the implicit public one.(‚ÀãÓ8î’Äó1
+S
+java:S6437"6Revoke and change this password, as it is compromised.(“Õë¢8•î’Äó1
+o	java:S100%"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇÜ¢¤ÿÿÿÿÿ8›î’Äó1
+S
+java:S6437("6Revoke and change this password, as it is compromised.(“Õë¢8œî’Äó1
+A
+java:S6905"Don't use the query "SELECT *".(¡Œ¡‘ÿÿÿÿÿ8î’Äó1
+o	java:S1003"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öçãüúÿÿÿÿ8Ÿî’Äó1
+S
+java:S64376"6Revoke and change this password, as it is compromised.(“Õë¢8¡î’Äó1
+<
+java:S6905"Don't use the query "SELECT *".(Ï¡Ã‡8¢î’Äó1
+H
+java:S26958"+This "PreparedStatement" has no parameters.(•îÎÉ8¦î’Äó1
+H
+java:S26959"+This "PreparedStatement" has no parameters.(”¾Ó¤8§î’Äó1
+M
+java:S2695:"+This "PreparedStatement" has no parameters.(¡ÂÀùÿÿÿÿ8¨î’Äó1
+M
+java:S2695;"+This "PreparedStatement" has no parameters.(€’úæşÿÿÿÿ8©î’Äó1
+M
+java:S2695<"+This "PreparedStatement" has no parameters.(ÜÕƒíüÿÿÿÿ8ªî’Äó1
+G
+java:S1068"*Remove this unused "UPDATE" private field.(ûßš®8­î’Äó1
+G
+java:S1068"*Remove this unused "DELETE" private field.(—Í–¸8­î’Äó1

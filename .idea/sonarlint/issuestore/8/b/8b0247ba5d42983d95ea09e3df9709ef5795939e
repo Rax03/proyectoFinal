@@ -1,0 +1,14 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éß¹ĞJ$14204412-e140-4b8c-8038-35b82a0e6498
+{
+java:S1118":Add a private constructor to hide the implicit public one.(ÿéæƒıÿÿÿÿJ$e4bd65eb-0534-42e2-9364-5fc937c0319e
+k
+java:S1068"*Remove this unused "INSERT" private field.(ªäµüÿÿÿÿJ$d21272fe-6b95-4a1b-a0dc-48577629809e
+f
+java:S1068"*Remove this unused "UPDATE" private field.(Â¼À‚J$4fa1f02a-8081-4a40-aafd-d439b9bc4977
+k
+java:S1068"*Remove this unused "DELETE" private field.(Ô§Ç¾ÿÿÿÿÿJ$c6a8614d-4403-41ad-8948-c02d7d4c37c2
+n
+java:S1068"-Remove this unused "FINBYNAME" private field.(¼¥¥ÍùÿÿÿÿJ$325c0b00-5056-4360-b7d8-ab19448d714c
+g
+java:S1068"+Remove this unused "FINDALL" private field.(Ü¼ºJ$77f4e5b9-1c32-4a22-a2ac-9393eae46488

@@ -1,0 +1,8 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤¼ŞóJ$ae27ecea-3ec1-4ba9-b837-98ee3dd71af5
+r	java:S116"QRename this field "Numero" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ¬èÖùÿÿÿÿ8ªúûÃó1
+‘	java:S116"VRename this field "Descripcion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šª¹ÃJ$06b1d901-0c37-45dc-a87a-49f7a351a4cc
+	java:S116	"RRename this field "Habitad" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù£ñòJ$028b91a7-5327-45e0-9086-f63814efd2bd
+’	java:S116
+"WRename this field "Estadisticas" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ£¤™J$a11dbd58-f24c-4f93-92f4-fe11ab24cff9
+‘	java:S116"VRename this field "Movimientos" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”Œ©J$2556c185-3d3a-4d0e-b95e-6203bd31eb11
