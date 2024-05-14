@@ -13,7 +13,7 @@ public class Pokemon{
     private Tipo tipo2;
     private Float Peso;
     private Float Altura;
-    private Pokedex pokeded;
+    private Pokedex pokedex;
 
     public Pokemon(int id, String nombre, String sexo, Tipo tipo1, Tipo tipo2, Float peso, Float altura, Pokedex pokeded) {
         this.id = id;
@@ -23,7 +23,7 @@ public class Pokemon{
         this.tipo2 = tipo2;
         Peso = peso;
         Altura = altura;
-        this.pokeded = pokeded;
+        this.pokedex = pokeded;
     }
 
     public int getId() {
@@ -82,12 +82,12 @@ public class Pokemon{
         Altura = altura;
     }
 
-    public Pokedex getPokeded() {
-        return pokeded;
+    public Pokedex getPokedex() {
+        return pokedex;
     }
 
-    public void setPokeded(Pokedex pokeded) {
-        this.pokeded = pokeded;
+    public void setPokedex(Pokedex pokeded) {
+        this.pokedex = pokeded;
     }
 
     @Override
@@ -100,7 +100,7 @@ public class Pokemon{
                 ", tipo2=" + tipo2 +
                 ", Peso=" + Peso +
                 ", Altura=" + Altura +
-                ", pokeded=" + pokeded +
+                ", pokeded=" + pokedex +
                 '}';
     }
 

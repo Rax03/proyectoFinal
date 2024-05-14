@@ -1,6 +1,5 @@
 package org.example.Model.DAO;
 
-import org.example.Model.Entidades.Pokedex;
 import org.example.Model.Entidades.Pokemon;
 import org.example.Model.Enums.Tipo;
 
@@ -9,25 +8,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PokemonDAO {
-    private static final String INSERT = "INSERT INTO pokemon ( Id ,Nombre, Sexo, Tipo1, Tipo2, Peso, Altura, Id_pokeded) VALUES (?,?,?,?,?,?,?,?)";
+    private static final String INSERT = "INSERT INTO pokemon ( Id ,Nombre, Sexo, Tipo1, Tipo2, Peso, Altura, Id_pokedex) VALUES (?,?,?,?,?,?,?,?)";
     private static final String UPDATE = "UPDATE pokemon  set sexo=?, Tipo1=?, Tipo2=?, Peso=?, Altura=? WHERE Id =?  ";
     private static final String DELETE = "DELETE FROM Pokemon where Id=?";
-    private static final String FINBYNAME = "SELECT * from pokemon where  Id=?";
+    private static final String FINBYId = "SELECT * from pokemon where  Id=?";
     private static final String FINDALL = "SELECT * from pokemon";
 
 
-    public static boolean insertar(Pokemon p) {
+    public static boolean insertar_pokemon(Pokemon p) {
         boolean resultado = false;
         try (Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/pokedex_pokemon", "root", "root")) {
             PreparedStatement ps = connection.prepareStatement(INSERT);
             ps.setInt(1, p.getId());
-            ps.setString(1, p.getNombre());
-            ps.setString(2, p.getSexo());
-            ps.setObject(3, p.getTipo1());
-            ps.setObject(4, p.getTipo2());
-            ps.setFloat(5, p.getPeso());
-            ps.setFloat(6, p.getAltura());
-            ps.setObject(7, p.getPokeded());
+            ps.setString(2, p.getNombre());
+            ps.setString(3, p.getSexo());
+            ps.setObject(4, p.getTipo1().toString());
+            ps.setObject(5, p.getTipo2().toString());
+            ps.setFloat(6, p.getPeso());
+            ps.setFloat(7, p.getAltura());
+            ps.setInt(8, p.getPokedex().getNumero());
             ps.executeUpdate();
             ps.close();
             resultado = true;
@@ -37,24 +36,24 @@ public class PokemonDAO {
         return resultado;
     }
 
-    public static Pokemon select_Nombre(String nombre) {
+    public static Pokemon select_Id(int Id) {
         Pokemon resultado = new Pokemon();
-        if (nombre == null) return resultado;
+        if (Id == 0) return resultado;
 
         try (Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/pokedex_pokemon", "root", "root")) {
-            PreparedStatement ps = connection.prepareStatement(FINBYNAME);
-            ps.setInt(1, Integer.parseInt(nombre));
+            PreparedStatement ps = connection.prepareStatement(FINBYId);
+            ps.setInt(1, Integer.parseInt(String.valueOf(Id)));
             ResultSet res = ps.executeQuery();
 
             if (res.next()) {   //la fila con el pokemon de la base de datos
                 resultado.setId(res.getInt("ID"));
                 resultado.setNombre(res.getString("Nombre"));
                 resultado.setSexo(res.getString("Sexo"));
-                resultado.setTipo1((Tipo) res.getObject("Tipo1"));
-                resultado.setTipo2((Tipo) res.getObject("Tipo2"));
+                resultado.setTipo1(Tipo.valueOf(res.getObject("Tipo1").toString()));
+                resultado.setTipo2(Tipo.valueOf(res.getObject("Tipo2").toString()));
                 resultado.setPeso(res.getFloat("peso"));
                 resultado.setAltura(res.getFloat("Altura"));
-                resultado.setPokeded((Pokedex) res.getObject("Id Pokeded"));
+                resultado.setPokedex(PokedexDAO.select_numero(res.getInt("Id_pokedex")));
 
             }
             ps.close();
@@ -76,11 +75,11 @@ public class PokemonDAO {
                 a.setId(res.getInt("ID"));
                 a.setNombre(res.getString("Nombre"));
                 a.setSexo(res.getString("Sexo"));
-                a.setTipo1((Tipo) res.getObject("Tipo1"));
-                a.setTipo2((Tipo) res.getObject("Tipo2"));
+                a.setTipo1(Tipo.valueOf(res.getObject("Tipo1").toString()));
+                a.setTipo2(Tipo.valueOf(res.getObject("Tipo2").toString()));
                 a.setPeso(res.getFloat("peso"));
                 a.setAltura(res.getFloat("Altura"));
-                a.setPokeded((Pokedex) res.getObject("Id Pokeded"));
+                a.setPokedex(PokedexDAO.select_numero(res.getInt("Id_pokedex")));
                 result.add(a);
             }
             res.close();
@@ -112,13 +111,12 @@ public class PokemonDAO {
         }
         try (Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/pokedex_pokemon", "root", "root")) {
             PreparedStatement ps = connection.prepareStatement(UPDATE);
-            ps.setString(1, pokemons.getNombre());
-            ps.setString(2, pokemons.getSexo());
-            ps.setObject(3, pokemons.getTipo1());
-            ps.setObject(4, pokemons.getTipo2());
-            ps.setFloat(5, pokemons.getPeso());
-            ps.setFloat(6, pokemons.getAltura());
-            ps.setObject(7, pokemons.getPokeded());
+            ps.setString(1, pokemons.getSexo());
+            ps.setObject(2, pokemons.getTipo1().toString());
+            ps.setObject(3, pokemons.getTipo2().toString());
+            ps.setFloat(4, pokemons.getPeso());
+            ps.setFloat(5, pokemons.getAltura());
+            ps.setInt(6, pokemons.getPokedex().getNumero());
 
             int removed = ps.executeUpdate();
             System.out.println("Pokemon actualizado: " + removed);

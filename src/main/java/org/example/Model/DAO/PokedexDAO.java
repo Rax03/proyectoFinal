@@ -16,7 +16,7 @@ public class PokedexDAO {
 
     //CRUD
 
-    public static boolean insertar(Pokedex p) {
+    public static boolean insertar_Pokedex(Pokedex p) {
         boolean resultado = false;
         try (Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/pokedex_pokemon", "root", "root")) {
             PreparedStatement ps = connection.prepareStatement(INSERT);
