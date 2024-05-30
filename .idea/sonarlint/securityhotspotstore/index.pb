@@ -11,5 +11,13 @@ c
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-S
-#src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
+R
+"src/main/java/org/example/App.java,2\6\268b09d2a5cdab7d148f0ec91f7b3fb51601410d
+Z
+*src/main/java/org/example/View/Scenes.java,5\5\55d7c4b8a97790c07730718eea398c9a3d01748c
+b
+2src/main/java/org/example/View/MainController.java,8\5\85993d1c241a4166e3347d3e452b5a95ceccb1fa
+a
+1src/main/java/org/example/View/AppController.java,b\a\badc6dfd2534b176bd26e4bd9e28f9177730a6da
+^
+.src/main/java/org/example/View/Controller.java,2\b\2bdd4a3ab3d30dee8506a5338103fee6189b52a8

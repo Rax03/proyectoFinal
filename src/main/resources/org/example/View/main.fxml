@@ -14,19 +14,20 @@
          <font>
             <Font size="30.0" />
          </font></Label>
-      <HBox prefHeight="318.0" prefWidth="600.0">
+      <HBox prefHeight="331.0" prefWidth="600.0">
          <children>
-            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="179.0" prefWidth="285.0" text="Descripcion">
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScene2" prefHeight="179.0" prefWidth="285.0" text="Descripcion">
                <graphic>
-                  <ImageView fitHeight="151.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="151.0" fitWidth="148.0" onMouseClicked="#goToScene2" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../imagenes/raf,360x360,075,t,fafafa_ca443f4786.jpg" />
                      </image>
                   </ImageView>
-               </graphic></Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#goToScene1" prefHeight="177.0" prefWidth="318.0" text="Pokemon">
+               </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#goToScene1" prefHeight="179.0" prefWidth="314.0" text="Pokemon">
                <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" onDragDetected="#goToScene1" onMouseClicked="#goToScene2" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="150.0" fitWidth="200.0" onDragDetected="#goToScene2" onMouseClicked="#goToScene2" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../imagenes/bb65acb8eced7c4a1fbce90916211e80.jpg" />
                      </image>

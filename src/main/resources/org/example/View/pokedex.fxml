@@ -11,18 +11,18 @@
    <children>
       <AnchorPane prefHeight="413.0" prefWidth="600.0">
          <children>
+            <Button layoutX="14.0" layoutY="362.0" mnemonicParsing="false" text="Button" textFill="#a81b1bc0" />
             <Spinner layoutX="14.0" layoutY="14.0" prefHeight="338.0" prefWidth="586.0" />
-            <TextField alignment="CENTER" editable="false" layoutX="14.0" layoutY="40.0" prefHeight="26.0" prefWidth="558.0" text="Pikachu">
+            <TextField alignment="CENTER" editable="false" layoutX="14.0" layoutY="40.0" prefHeight="26.0" prefWidth="558.0" text="Entrada del pokemon 25">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </TextField>
-            <TextField accessibleRole="BUTTON" alignment="CENTER" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="558.0" text="BUlbasur">
+            <TextField accessibleRole="BUTTON" alignment="CENTER" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="558.0" text="Entrada del  pokemon 1">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </TextField>
-            <Button layoutX="8.0" layoutY="365.0" mnemonicParsing="false" text="Button" textFill="#a81b1bc0" />
          </children>
       </AnchorPane>
    </children>
