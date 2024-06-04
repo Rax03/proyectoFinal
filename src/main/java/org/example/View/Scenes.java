@@ -1,8 +1,15 @@
 package org.example.View;
 
+import org.example.Model.Entidades.Pokemon;
+
 public enum Scenes {
     ROOT("view/layout.fxml"),
-    MAIN("view/main.fxml");
+    MAIN("view/main.fxml"),
+    POKEDEX("view/pokedex.fxml"),
+    POKEMON("view/pokemons.fxml"),
+    CaPokemon("view/descripcionPokemon.fxml"),
+    CaPokeded("view/descripcionPokeded.fxml");
+
 
 
     private String url;

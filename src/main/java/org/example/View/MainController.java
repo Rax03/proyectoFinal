@@ -4,10 +4,9 @@ package org.example.View;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TabPane;
-import javafx.scene.input.MouseEvent;
+import org.example.App;
 
-import java.io.ObjectInput;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 public class MainController extends Controller implements Initializable {
@@ -32,13 +31,21 @@ public class MainController extends Controller implements Initializable {
 
     }
 
-    public void goToScene2(ActionEvent actionEvent) {
+    @FXML
+    public void escenaPokedex(ActionEvent actionEvent) throws IOException {
+        App.currentController.changeScene(Scenes.POKEDEX, null);
+    }
+@FXML
+    public void escenaPokemon(ActionEvent actionEvent) throws IOException {
+        App.currentController.changeScene(Scenes.POKEMON,null);
 
     }
 
-    public void goToScene1(MouseEvent mouseEvent) {
+    @FXML
+
+    public void escenacerrar(ActionEvent actionEvent) throws IOException {
+        App.currentController.changeScene(Scenes.MAIN, null);
+        System.exit(0);
 
     }
-
-
 }

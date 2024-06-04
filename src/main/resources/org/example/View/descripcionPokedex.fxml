@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #00FFFF;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.View.PokemonController">
+   <children>
+      <AnchorPane prefHeight="413.0" prefWidth="600.0" style="-fx-background-color: #7B68EE;">
+         <children>
+            <Spinner layoutX="-7.0" layoutY="14.0" prefHeight="30.0" prefWidth="609.0" />
+            <Button layoutX="8.0" layoutY="365.0" mnemonicParsing="false" onAction="#escenaVolver" style="-fx-background-color: #FF0000; -fx-background-radius: 100;" text="Volver" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

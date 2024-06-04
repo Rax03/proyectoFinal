@@ -4,36 +4,47 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.View.MainController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.View.MainController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" text="Elige uno opcion que quieras Mirar" textAlignment="CENTER" underline="true">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="62.0" prefWidth="600.0" stylesheets="@../../../Estilos.css" text="Elige uno opcion que quieras Mirar" textAlignment="CENTER" underline="true">
          <font>
             <Font size="30.0" />
-         </font></Label>
-      <HBox prefHeight="331.0" prefWidth="600.0">
+         </font>
+      </Label>
+      <AnchorPane prefHeight="373.0" prefWidth="600.0" stylesheets="@../../../Estilos.css">
          <children>
-            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScene2" prefHeight="179.0" prefWidth="285.0" text="Descripcion">
+            <Button contentDisplay="BOTTOM" layoutX="80.0" layoutY="56.0" mnemonicParsing="false" onAction="#escenaPokedex" prefHeight="112.0" prefWidth="130.0" style="-fx-background-radius: 100;" stylesheets="@../../../Estilos.css">
                <graphic>
-                  <ImageView fitHeight="151.0" fitWidth="148.0" onMouseClicked="#goToScene2" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="104.0" fitWidth="138.0">
                      <image>
-                        <Image url="@../../../imagenes/raf,360x360,075,t,fafafa_ca443f4786.jpg" />
+                        <Image url="@../../../imagenes/pokedex.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#goToScene1" prefHeight="179.0" prefWidth="314.0" text="Pokemon">
+            <Button layoutX="366.0" layoutY="59.0" mnemonicParsing="false" onAction="#escenaPokemon" prefHeight="126.0" prefWidth="139.0" style="-fx-background-radius: 100;" stylesheets="@../../../Estilos.css">
                <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" onDragDetected="#goToScene2" onMouseClicked="#goToScene2" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="111.0" fitWidth="106.0" preserveRatio="true">
                      <image>
-                        <Image url="@../../../imagenes/bb65acb8eced7c4a1fbce90916211e80.jpg" />
+                        <Image url="@../../../imagenes/Silueta.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+            </Button>
+            <Button layoutX="211.0" layoutY="245.0" mnemonicParsing="false" onAction="#escenacerrar" prefHeight="94.0" prefWidth="139.0" style="-fx-background-radius: 100;">
+               <graphic>
+                  <ImageView fitHeight="69.0" fitWidth="75.0">
+                     <image>
+                        <Image url="@../../../imagenes/pokeball.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
-      </HBox>
+      </AnchorPane>
    </children>
 </VBox>

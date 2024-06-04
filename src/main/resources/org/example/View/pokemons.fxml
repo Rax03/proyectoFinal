@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Spinner?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.View.MainController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #00FFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.View.PokemonController">
    <children>
-      <AnchorPane prefHeight="413.0" prefWidth="600.0">
+      <AnchorPane prefHeight="413.0" prefWidth="600.0" style="-fx-background-color: #7B68EE;">
          <children>
-            <Spinner layoutX="14.0" layoutY="14.0" prefHeight="338.0" prefWidth="586.0" />
-            <TextField alignment="CENTER" editable="false" layoutX="14.0" layoutY="40.0" prefHeight="26.0" prefWidth="558.0" text="Pikachu">
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
-            </TextField>
-            <TextField accessibleRole="BUTTON" alignment="CENTER" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="558.0" text="BUlbasur">
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
-            </TextField>
-            <Button layoutX="8.0" layoutY="365.0" mnemonicParsing="false" text="Button" textFill="#a81b1bc0" />
+            <Spinner layoutX="-7.0" layoutY="14.0" prefHeight="30.0" prefWidth="609.0" />
+            <Button layoutX="8.0" layoutY="365.0" mnemonicParsing="false" onAction="#escenaVolver" style="-fx-background-color: #FF0000; -fx-background-radius: 100;" text="Volver" textFill="WHITE" />
+            <Button layoutX="523.0" layoutY="355.0" mnemonicParsing="false" onAction="#ecenaprueba" text="Button" />
          </children>
       </AnchorPane>
    </children>
