@@ -7,6 +7,8 @@ public enum Scenes {
     MAIN("view/main.fxml"),
     POKEDEX("view/pokedex.fxml"),
     POKEMON("view/pokemons.fxml"),
+    insertar_pokemon("view/Insertar_pokemons.fxml"),
+    insertar_pokedex("view/Insertar_pokedex.fxml"),
     CaPokemon("view/descripcionPokemon.fxml"),
     CaPokeded("view/descripcionPokeded.fxml");
 

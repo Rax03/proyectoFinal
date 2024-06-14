@@ -19,6 +19,7 @@ import java.util.ResourceBundle;
 public class AppController extends Controller implements Initializable {
     @FXML
     private BorderPane borderPane;
+    @FXML
     private Controller centerController;
 
     @Override

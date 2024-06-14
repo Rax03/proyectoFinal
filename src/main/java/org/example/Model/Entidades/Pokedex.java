@@ -11,6 +11,17 @@ public class Pokedex {
     private String Movimientos;
     private List<Pokemon> pokemons;
 
+    public Pokedex(){}
+
+    public Pokedex(int id, String descripcion, String habitad, String estadisticas, String movimientos, List<Pokemon> pokemons) {
+        Numero = id;
+        Descripcion = descripcion;
+        Habitad = habitad;
+        Estadisticas = estadisticas;
+        Movimientos = movimientos;
+        this.pokemons = pokemons;
+    }
+
     public int getNumero() {
         return Numero;
     }
@@ -93,16 +104,4 @@ public class Pokedex {
                 ", pokemons=" + pokemons +
                 '}';
     }
-
-    public Pokedex(int id, String descripcion, String habitad, String estadisticas, String movimientos, List<Pokemon> pokemons) {
-        Numero = id;
-        Descripcion = descripcion;
-        Habitad = habitad;
-        Estadisticas = estadisticas;
-        Movimientos = movimientos;
-        this.pokemons = pokemons;
-
-
-    }
-    public Pokedex(){}
 }

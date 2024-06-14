@@ -17,7 +17,7 @@ public class descripcionPokemonController extends Controller implements Initiali
     }
 
     @Override
-    public void onOpen(Object input) throws IOException {
+    public void onOpen(Object input)  {
 
     }
 

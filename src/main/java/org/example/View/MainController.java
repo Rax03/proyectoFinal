@@ -47,5 +47,7 @@ public class MainController extends Controller implements Initializable {
         App.currentController.changeScene(Scenes.MAIN, null);
         System.exit(0);
 
+
+
     }
 }

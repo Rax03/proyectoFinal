@@ -3,6 +3,8 @@ package org.example.Model.Entidades;
 
 import org.example.Model.Enums.Tipo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Pokemon{
@@ -24,6 +26,10 @@ public class Pokemon{
         Peso = peso;
         Altura = altura;
         this.pokedex = pokeded;
+    }
+
+    public <E> Pokemon(String text, String text1, ArrayList<E> es) {
+
     }
 
     public int getId() {
@@ -100,7 +106,7 @@ public class Pokemon{
                 ", tipo2=" + tipo2 +
                 ", Peso=" + Peso +
                 ", Altura=" + Altura +
-                ", pokeded=" + pokedex +
+                ", pokeded=" + pokedex.getNumero() +
                 '}';
     }
 
