@@ -13,7 +13,7 @@
       <AnchorPane prefHeight="413.0" prefWidth="600.0" style="-fx-background-color: #7B68EE;">
          <children>
             <Button layoutX="14.0" layoutY="362.0" mnemonicParsing="false" onAction="#escenaVolver" style="-fx-background-color: #FF0000; -fx-background-radius: 100px;" text="Volver" textFill="WHITE" />
-            <TableView fx:id="tableView" layoutX="99.0" layoutY="14.0" prefHeight="308.0" prefWidth="386.0">
+            <TableView fx:id="tableView" layoutX="99.0" layoutY="14.0"  prefHeight="308.0" prefWidth="386.0">
               <columns>
                 <TableColumn fx:id="columnNUmero" prefWidth="75.0" text="Numero" />
                 <TableColumn fx:id="columnDescripcion" prefWidth="75.0" text="Descripcion" />
@@ -30,6 +30,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
+            <Button layoutX="446.0" layoutY="349.0" mnemonicParsing="false" onAction="#eliminarPokedex" text="eliminar" />
          </children>
       </AnchorPane>
    </children>

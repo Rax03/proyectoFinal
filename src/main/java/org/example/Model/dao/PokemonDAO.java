@@ -36,11 +36,11 @@ public class PokemonDAO implements DAO<Pokemon, Integer> {
                         pst.setInt(1,entity.getId());
                         pst.setString(2,entity.getNombre());
                         pst.setString(3,entity.getSexo());
-                        pst.setObject(4,entity.getTipo1());
-                        pst.setObject(5,entity.getTipo2());
+                        pst.setString(4,entity.getTipo1().toString());
+                        pst.setString(5,entity.getTipo2().toString());
                         pst.setFloat(6,entity.getPeso());
                         pst.setFloat(7,entity.getAltura());
-                        pst.setObject(8,entity.getPokedex());
+                        pst.setInt(8,entity.getPokedex().getNumero());
                         pst.executeUpdate();
                     }catch (SQLException e){
                         e.printStackTrace();

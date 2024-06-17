@@ -17,6 +17,7 @@ import org.example.App;
 import org.example.Model.Enums.Tipo;
 import org.example.Model.dao.PokemonDAO;
 import org.example.Model.Entidades.Pokemon;
+import org.w3c.dom.Entity;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,29 +32,32 @@ public class PokemonController extends Controller implements Initializable {
     private TableView<Pokemon> tableView;
 
     @FXML
-    private TableColumn<Pokemon,String> columnId;
+    private TextField textID;
+
+
     @FXML
-    private TableColumn<Pokemon,String> columnName;
+    private TableColumn<Pokemon, String> columnId;
     @FXML
-    private TableColumn<Pokemon,String>columnSexo;
+    private TableColumn<Pokemon, String> columnName;
     @FXML
-    private TableColumn<Pokemon,String>columnTipo1;
+    private TableColumn<Pokemon, String> columnSexo;
     @FXML
-    private TableColumn<Pokemon,String>columnTipo2;
+    private TableColumn<Pokemon, String> columnTipo1;
     @FXML
-    private TableColumn<Pokemon,String>columnPeso;
+    private TableColumn<Pokemon, String> columnTipo2;
     @FXML
-    private TableColumn<Pokemon,String>columnAltura;
+    private TableColumn<Pokemon, String> columnPeso;
     @FXML
-    private TableColumn<Pokemon,String>columnId_Pokeded;
+    private TableColumn<Pokemon, String> columnAltura;
+    @FXML
+    private TableColumn<Pokemon, String> columnId_Pokeded;
 
     private ObservableList<Pokemon> pokemons;
-
-
+    private PokemonController controller;
 
 
     @Override
-    public void onOpen(Object input)  {
+    public void onOpen(Object input) {
 
         List<Pokemon> pokemons = PokemonDAO.build().findAll();
         System.out.println(pokemons);
@@ -65,18 +69,18 @@ public class PokemonController extends Controller implements Initializable {
     public void escenaVolver(ActionEvent actionEvent) throws IOException {
         App.currentController.changeScene(Scenes.MAIN, null);
     }
+
     @FXML
 
-    public  void  escena_idpokedex( ActionEvent actionEvent) throws  IOException{
-        App.currentController.changeScene(Scenes.POKEDEX,null);
+    public void escena_idpokedex(ActionEvent actionEvent) throws IOException {
+        App.currentController.changeScene(Scenes.POKEDEX, null);
     }
 
 
     @FXML
     private void agregaPokemon(ActionEvent actionEvent) throws IOException {
-        App.currentController.openModal(Scenes.insertar_pokemon, "animal de feria", this,null);
+        App.currentController.openModal(Scenes.insertar_pokemon, "animal de feria", this, null);
     }
-
 
 
     @Override
@@ -86,83 +90,83 @@ public class PokemonController extends Controller implements Initializable {
     public void guardarpokemon(Pokemon pokemon) {
         PokemonDAO.build().save(pokemon);
         this.pokemons.add(pokemon);
-    }
 
+    }
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tableView.setEditable(true);
-        columnId.setCellValueFactory(pokemon-> new SimpleStringProperty(String.valueOf(pokemon.getValue().getId())));
-        columnName.setCellValueFactory(pokemon-> new SimpleStringProperty(pokemon.getValue().getNombre()));
-        columnSexo.setCellValueFactory(pokemon-> new SimpleStringProperty(pokemon.getValue().getSexo()));
+        columnId.setCellValueFactory(pokemon -> new SimpleStringProperty(String.valueOf(pokemon.getValue().getId())));
+        columnName.setCellValueFactory(pokemon -> new SimpleStringProperty(pokemon.getValue().getNombre()));
+        columnSexo.setCellValueFactory(pokemon -> new SimpleStringProperty(pokemon.getValue().getSexo()));
         columnSexo.setCellFactory(TextFieldTableCell.forTableColumn());
-        columnTipo1.setCellValueFactory(pokemon-> new SimpleStringProperty(String.valueOf(pokemon.getValue().getTipo1())));
+        columnTipo1.setCellValueFactory(pokemon -> new SimpleStringProperty(String.valueOf(pokemon.getValue().getTipo1())));
         columnTipo1.setCellFactory(TextFieldTableCell.forTableColumn());
-        columnTipo2.setCellValueFactory(pokemon-> new SimpleStringProperty(String.valueOf(pokemon.getValue().getTipo2())));
+        columnTipo2.setCellValueFactory(pokemon -> new SimpleStringProperty(String.valueOf(pokemon.getValue().getTipo2())));
         columnTipo2.setCellFactory(TextFieldTableCell.forTableColumn());
-        columnPeso.setCellValueFactory(pokemon-> new SimpleStringProperty(String.valueOf(pokemon.getValue().getPeso())));
+        columnPeso.setCellValueFactory(pokemon -> new SimpleStringProperty(String.valueOf(pokemon.getValue().getPeso())));
         columnPeso.setCellFactory(TextFieldTableCell.forTableColumn());
-        columnAltura.setCellValueFactory(pokemon-> new SimpleStringProperty(String.valueOf(pokemon.getValue().getAltura())));
+        columnAltura.setCellValueFactory(pokemon -> new SimpleStringProperty(String.valueOf(pokemon.getValue().getAltura())));
         columnAltura.setCellFactory(TextFieldTableCell.forTableColumn());
-        columnId_Pokeded.setCellValueFactory(pokemon-> new SimpleStringProperty(String.valueOf(pokemon.getValue().getPokedex().getNumero())));
+        columnId_Pokeded.setCellValueFactory(pokemon -> new SimpleStringProperty(String.valueOf(pokemon.getValue().getPokedex().getNumero())));
         columnSexo.setOnEditCommit(event -> {
             if (event.getNewValue() == event.getOldValue()) {
                 return;
             }
 
-            if(event.getNewValue().length()<=60){
+            if (event.getNewValue().length() <= 60) {
                 Pokemon pokemon = event.getRowValue();
                 pokemon.setSexo(event.getNewValue());
                 PokemonDAO.build().save(pokemon);
-            }else{
+            } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Te has pasado!!!!!");
                 alert.show();
             }
         });
-        columnTipo1.setOnEditCommit(event->{
+        columnTipo1.setOnEditCommit(event -> {
             if (event.getNewValue() == event.getOldValue()) {
                 return;
             }
 
-            if(event.getNewValue().length()<=60){
+            if (event.getNewValue().length() <= 60) {
                 Pokemon pokemon = event.getRowValue();
                 pokemon.setTipo1(Tipo.valueOf(event.getNewValue()));
                 PokemonDAO.build().save(pokemon);
-            }else{
+            } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Te has pasado!!!!!");
                 alert.show();
             }
 
         });
-        columnTipo2.setOnEditCommit(event->{
+        columnTipo2.setOnEditCommit(event -> {
             if (event.getNewValue() == event.getOldValue()) {
                 return;
             }
 
-            if(event.getNewValue().length()<=60){
+            if (event.getNewValue().length() <= 60) {
                 Pokemon pokemon = event.getRowValue();
                 pokemon.setTipo2(Tipo.valueOf(event.getNewValue()));
                 PokemonDAO.build().save(pokemon);
-            }else{
+            } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Te has pasado!!!!!");
                 alert.show();
             }
 
         });
-        columnPeso.setOnEditCommit(event->{
+        columnPeso.setOnEditCommit(event -> {
             if (event.getNewValue() == event.getOldValue()) {
                 return;
             }
 
-            if(event.getNewValue().length()<=60){
+            if (event.getNewValue().length() <= 60) {
                 Pokemon pokemon = event.getRowValue();
                 pokemon.setPeso(Float.valueOf(event.getNewValue()));
                 PokemonDAO.build().save(pokemon);
-            }else{
+            } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Te has pasado!!!!!");
                 alert.show();
@@ -170,16 +174,16 @@ public class PokemonController extends Controller implements Initializable {
 
         });
 
-        columnAltura.setOnEditCommit(event->{
+        columnAltura.setOnEditCommit(event -> {
             if (event.getNewValue() == event.getOldValue()) {
                 return;
             }
 
-            if(event.getNewValue().length()<=60){
+            if (event.getNewValue().length() <= 60) {
                 Pokemon pokemon = event.getRowValue();
                 pokemon.setAltura(Float.valueOf(event.getNewValue()));
                 PokemonDAO.build().save(pokemon);
-            }else{
+            } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Te has pasado!!!!!");
                 alert.show();
@@ -188,7 +192,14 @@ public class PokemonController extends Controller implements Initializable {
         });
 
 
-}
+    }
 
+    @FXML
+    public void eliminarPokemon(ActionEvent actionEvent) throws IOException {
+        PokemonDAO.build().delete(tableView.getSelectionModel().getSelectedItem());
+        this.pokemons.remove(tableView.getSelectionModel().getSelectedItem());
+
+
+    }
 }
 

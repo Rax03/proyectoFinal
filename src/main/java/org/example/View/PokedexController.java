@@ -18,6 +18,7 @@ import org.example.Model.dao.PokemonDAO;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -71,6 +72,12 @@ public class PokedexController extends  Controller implements Initializable {
     @FXML
     private void agregaPokedex() throws IOException {
         App.currentController.openModal(Scenes.insertar_pokedex,"Agregando una Pokedex...",this,null);
+    }
+
+    @FXML
+    public void eliminarPokedex(ActionEvent event) throws IOException, SQLException {
+        PokedexDAO.build().delete(tableView.getSelectionModel().getSelectedItem());
+        this.pokedexes.remove(tableView.getSelectionModel().getSelectedItem());
     }
 
     @Override
@@ -149,5 +156,7 @@ public class PokedexController extends  Controller implements Initializable {
                 alert.show();
             }
         });
+
+
     }
 }

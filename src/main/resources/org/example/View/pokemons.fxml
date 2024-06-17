@@ -10,10 +10,10 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #00FFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.View.PokemonController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="584.0" style="-fx-background-color: #7B68EE;">
+      <AnchorPane onMouseClicked="#eliminarPokemon" prefHeight="400.0" prefWidth="584.0" style="-fx-background-color: #7B68EE;">
          <children>
             <Button layoutX="11.0" layoutY="355.0" mnemonicParsing="false" onAction="#escenaVolver" style="-fx-background-color: #FF0000; -fx-background-radius: 100;" text="Volver" textFill="WHITE" />
-            <TableView fx:id="tableView" layoutX="11.0" layoutY="14.0" prefHeight="262.0" prefWidth="578.0" AnchorPane.bottomAnchor="123.60000000000002" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.399999999999977" AnchorPane.topAnchor="13.600000000000023">
+            <TableView fx:id="tableView" layoutX="11.0" layoutY="14.0" onMouseClicked="#eliminarPokemon" prefHeight="262.0" prefWidth="578.0" AnchorPane.bottomAnchor="123.60000000000002" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.399999999999977" AnchorPane.topAnchor="13.600000000000023">
               <columns>
                 <TableColumn fx:id="columnId" prefWidth="75.0" text="Id" />
                 <TableColumn fx:id="columnName" prefWidth="75.0" text="Nombre" />
@@ -34,6 +34,7 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Button layoutX="406.0" layoutY="343.0" mnemonicParsing="false" onAction="#eliminarPokemon" text="Eliminar" />
          </children>
       </AnchorPane>
    </children>
